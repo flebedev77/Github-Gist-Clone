@@ -6,6 +6,7 @@
     --button-hover-background: rgb(47, 55, 66);
     --border-radius: 5px;
     --border-weight: 1px;
+    --outline-focus-color: rgb(47, 92, 160);
 }
 
 body {
@@ -41,7 +42,8 @@ button {
     margin: 5px;
 }
 
-button:hover, button:focus {
+button:hover,
+button:focus {
     background: var(--button-hover-background);
 }
 
@@ -57,7 +59,45 @@ input {
 }
 
 input:focus {
-    outline: var(--border-weight) solid rgb(47, 92, 160);
+    outline: var(--border-weight) solid var(--outline-focus-color);
+}
+
+form textarea {
+    resize: vertical;
+    margin: 5px;
+    background: var(--button-hover-background);
+    border: var(--border-weight) solid var(--border-color);
+    border-radius: var(--border-radius);
+    color: var(--text-color);
+    min-height: 60px;
+    max-height: 500px;
+}
+
+form label {
+    text-align: left;
+    margin-top: 5px;
+    margin-bottom: -3px;
+    font-size: 15px;
+}
+
+form textarea:focus {
+    outline: var(--border-weight) solid var(--outline-focus-color);
+}
+
+code {
+    background: var(--button-background);
+    border-radius: var(--border-radius);
+    padding-inline: 10px;
+}
+
+hr {
+    border: none;
+    background: none;
+    border-bottom: 2px solid var(--border-color);
+}
+
+h1,h2,h3,h4,h5,h6 {
+    margin-bottom: -5px;
 }
 
 @font-face {

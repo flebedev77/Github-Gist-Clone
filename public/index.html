@@ -14,9 +14,21 @@
         <center>
             <h1>Upload a File</h1>
             <form action="/upload" method="post" enctype="multipart/form-data">
-                <input type="text" placeholder="File Name" name="filename">
-                <input type="file" name="file" />
+                <label for="filename">File name</label>
+                <input type="text" placeholder="File Name" name="filename" required>
+                <label for="file">File to upload</label>
+                <input type="file" name="file" required />
                 <button type="submit">Upload</button>
+            </form>
+        </center>
+        <center>
+            <h1>Submit a Gist</h1>
+            <form action="/gist-upload" method="post">
+                <label for="gist-title">Gist title</label>
+                <input type="text" placeholder="Title" name="gist-title" required style="font-size:20px;">
+                <label for="gist-content">Gist content (Markdown supported)</label>
+                <textarea name="gist-content" id="gist-content" required></textarea>
+                <button type="submit">Publish</button>
             </form>
         </center>
     </main>

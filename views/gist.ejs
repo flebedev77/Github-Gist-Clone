@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gist - <%= locals.title %>
+    </title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/">Uploads</a></li>
+            <li><a href="/">Gists</a></li>
+        </ul>
+    </nav>
+    <h1>
+        <%= locals.title %>
+    </h1>
+    <div id="content"><%- locals.content.replaceAll("\n", "<br>" ) %></div>
+    <script src="/js/lib/marked.min.js"></script>
+    <script>
+        const contentEl = document.getElementById("content");
+        console.log(typeof contentEl.innerText);
+        contentEl.innerHTML = marked.parse(contentEl.innerText);
+    </script>
+</body>
+
+</html>
