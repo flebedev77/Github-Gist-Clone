@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gists - Github gists clone</title>
+    <title>Uploads - Github gists clone</title>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/list.css">
 </head>
@@ -24,23 +24,41 @@
         </ul>
     </nav>
 
-    <ul id="list">
-        <h1>Gists</h1>
+    <ul id="list" class="upload-list">
+        <h1>File Uploads</h1>
     </ul>
     <script>
         const list = document.getElementById("list");
-        const gists = JSON.parse('<%- JSON.stringify(gists) %>');
-        gists.forEach((gist) => {
+        const uploads = JSON.parse('<%- JSON.stringify(uploads) %>');
+        uploads.forEach((upload) => {
             const li = document.createElement("li");
             const a = document.createElement("a");
-            a.href = "/gists/" + gist.id;
-            a.innerText = gist.title;
-            const p = document.createElement("p");
-            p.innerText = "ID: " + gist.id;
+            a.href = "/raw/" + upload.title;
+            a.innerText = upload.title;
+
+            const rawButton = document.createElement("button");
+            rawButton.innerText = "Raw";
+            rawButton.style.marginLeft = "auto";
+            rawButton.onclick = function() {
+                redirect("/raw/" + upload.title);
+            }
+            const binButton = document.createElement("button");
+            binButton.innerText = "Bin";
+            binButton.onclick = function() {
+                redirect("/" + upload.title);
+            }
+
             li.appendChild(a);
-            li.appendChild(p);
+            li.appendChild(rawButton);
+            li.appendChild(binButton);
             list.appendChild(li);
         })
+
+        function redirect(url) {
+            const a = document.createElement('a');
+            a.href = url;
+            a.click();
+        }
     </script>
 </body>
 

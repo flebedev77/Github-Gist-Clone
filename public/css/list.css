@@ -1,0 +1,42 @@
+#list {
+    margin-left: 20px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#list a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-family: "Nerd";
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+#list p {
+    margin: 10px 15px;
+    padding: 0;
+}
+
+#list li {
+    border: var(--border-weight) solid var(--border-color);
+    border-radius: var(--border-radius);
+    background: rgb(38, 44, 54); 
+    margin: 10px;
+    padding: 10px;
+    width: 50%;
+    min-width: 200px;
+    max-width: 700px;
+}
+
+.upload-list li {
+    display: flex;
+    align-items: center;
+}
+
+.upload-list li button {
+    padding: 5px 10px;
+    font-weight: normal;
+}

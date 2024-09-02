@@ -44,9 +44,12 @@ button {
     margin: 5px;
 }
 
-button:hover,
-button:focus {
+button:hover {
     background: var(--button-hover-background);
+}
+
+button:focus {
+    outline: var(--border-weight) solid var(--outline-focus-color);
 }
 
 input {

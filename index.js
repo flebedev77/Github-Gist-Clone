@@ -93,13 +93,22 @@ app.get("/uploads", (req, res) => {
             return res.status(501).send(err.toString());
         }
 
-        let html = "<ul>";
-        files.forEach((file) => {
-            html += `<li><a href="/${file}">${file}</a></li>`;
-        });
-        html += "</ul>";
+        // let html = "<ul>";
+        // files.forEach((file) => {
+        //     html += `<li><a href="/${file}">${file}</a></li>`;
+        // });
+        // html += "</ul>";
 
-        res.send(html);
+        // res.send(html);
+
+        const uploads = [];
+        files.forEach((file) => {
+            uploads.push({ title: file });
+        })
+
+        res.render("uploadlist", {
+            uploads
+        })
     });
 });
 
