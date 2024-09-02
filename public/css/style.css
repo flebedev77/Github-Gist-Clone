@@ -1,0 +1,66 @@
+:root {
+    --background-color: rgb(33, 40, 48);
+    --border-color: rgb(67, 74, 82);
+    --text-color: rgb(209, 215, 224);
+    --button-background: rgb(42, 49, 60);
+    --button-hover-background: rgb(47, 55, 66);
+    --border-radius: 5px;
+    --border-weight: 1px;
+}
+
+body {
+    background: var(--background-color);
+    font-family: "Nerd";
+    color: var(--text-color);
+}
+
+* {
+    padding: 2px;
+    padding-inline: 5px;
+}
+
+form {
+    max-width: 500px;
+    /* background: red; */
+    background: var(--background-color);
+    border: var(--border-weight) solid var(--border-color);
+    border-radius: var(--border-radius);
+    display: flex;
+    flex-direction: column;
+    padding: 25px 15px;
+}
+
+button {
+    background: var(--button-background);
+    color: var(--text-color);
+    font-weight: bold;
+    font-family: "Nerd";
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    border: var(--border-weight) solid var(--border-color);
+    margin: 5px;
+}
+
+button:hover, button:focus {
+    background: var(--button-hover-background);
+}
+
+input {
+    background: var(--button-background);
+    color: var(--text-color);
+    font-weight: bold;
+    font-family: "Nerd";
+    padding: 5px 10px;
+    border: var(--border-weight) solid var(--border-color);
+    border-radius: var(--border-radius);
+    margin: 5px;
+}
+
+input:focus {
+    outline: var(--border-weight) solid rgb(47, 92, 160);
+}
+
+@font-face {
+    font-family: "Nerd";
+    src: url("../fonts/EnvyCodeRNerdFont-Regular.ttf");
+}

@@ -1,16 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>File Upload</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    <h1>Upload a File</h1>
-    <form action="/upload" method="post" enctype="multipart/form-data">
-        <input type="text" placeholder="File Name" name="filename">
-        <input type="file" name="file" />
-        <button type="submit">Upload</button>
-    </form>
+    <main>
+        <center>
+            <h1>Upload a File</h1>
+            <form action="/upload" method="post" enctype="multipart/form-data">
+                <input type="text" placeholder="File Name" name="filename">
+                <input type="file" name="file" />
+                <button type="submit">Upload</button>
+            </form>
+        </center>
+    </main>
 </body>
+
 </html>
