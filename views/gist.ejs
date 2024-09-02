@@ -23,15 +23,29 @@
             <li><a href="/gists">Gists</a></li>
         </ul>
     </nav>
-    <h1>
-        <%= locals.title %>
-    </h1>
+    <header style="display: flex; align-items: center;">
+        <h1>
+            <%= locals.title %>
+        </h1>
+
+        <div style="margin-top: 30px; margin-left: auto; display: flex; gap: 2px">
+            <button id="renderedButton" class="small">Rendered</button>
+            <button id="rawButton" class="small">Raw</button>
+        </div>
+    </header>
     <div id="content"><%- locals.content.replaceAll("\n", "<br>" ) %></div>
     <script src="/js/lib/marked.min.js"></script>
     <script>
         const contentEl = document.getElementById("content");
-        console.log(typeof contentEl.innerText);
+        const originalContent = contentEl.innerText;
         contentEl.innerHTML = marked.parse(contentEl.innerText);
+
+        document.getElementById("rawButton").addEventListener("click", () => {
+            contentEl.innerText = originalContent;
+        })
+        document.getElementById("renderedButton").addEventListener("click", () => {
+            contentEl.innerHTML = marked.parse(originalContent);
+        })
     </script>
 </body>
 

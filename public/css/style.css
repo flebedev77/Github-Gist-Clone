@@ -52,6 +52,11 @@ button:focus {
     outline: var(--border-weight) solid var(--outline-focus-color);
 }
 
+.small {
+    padding: 5px 10px;
+    font-weight: normal;
+}
+
 input {
     background: var(--button-background);
     color: var(--text-color);
