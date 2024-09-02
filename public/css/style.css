@@ -7,12 +7,14 @@
     --border-radius: 5px;
     --border-weight: 1px;
     --outline-focus-color: rgb(47, 92, 160);
+    --nav-color: rgb(22, 28, 35);
 }
 
 body {
     background: var(--background-color);
     font-family: "Nerd";
     color: var(--text-color);
+    padding-top: 70px;
 }
 
 * {
@@ -98,6 +100,32 @@ hr {
 
 h1,h2,h3,h4,h5,h6 {
     margin-bottom: -5px;
+}
+
+nav {
+    display: flex;
+    background: var(--nav-color);
+    margin: 0;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    align-items: center;
+    padding-inline: 20px;
+}
+
+nav > svg {
+    fill: var(--text-color);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav a {
+    color: var(--text-color);
 }
 
 @font-face {
