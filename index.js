@@ -60,7 +60,7 @@ app.post("/upload", upload.single("file"), (req, res) => {
     if (!req.file) {
         return res.status(400).send("No file uploaded.");
     }
-    res.redirect(req.file.filename);
+    res.redirect("/uploads");
 });
 
 app.post("/gist-upload", (req, res) => {
